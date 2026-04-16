@@ -20,7 +20,7 @@ namespace Eksamensprjekt_forsøg2
         public Kunde SignUp(string fornavn, string efternavn, int alder, string brugernavn, string kodeord)
         {
             string connectionString =
-                      "server=localhost;database=Sportsbooking;uid=root;pwd=Sune1212;";
+                      "server=localhost;database=Sportsbooking;uid=root;pwd=Hest123;";
             MySqlConnection conn = new MySqlConnection(connectionString);
 
             // MySqlCommand repræsenterer en SQL-forespørgsel vi vil sende til databasen
@@ -37,8 +37,8 @@ namespace Eksamensprjekt_forsøg2
                 conn.Open();
 
                 // SQL-forespørgslen vi sender til databasen
-                string query = "INSERT INTO Bog (Titel, Forfatter, Udgivelsesaar)" +
-                    "VALUES (@titel, @forfatter, @udgivelsesår);";
+                string query = "INSERT INTO Kunde (Fornavn, Efternavn, Alder, Brugernavn, Kodeord)" +
+                    "VALUES (@fornavn, @efternavn, @alder, @brugernavn, @kodeord);";
 
 
                 // Opretter kommando-objektet og kobler det til forbindelsen
@@ -86,18 +86,12 @@ namespace Eksamensprjekt_forsøg2
                     conn.Close();
             }
             return null;
-
         }
-
     }
 
     public void Login(string brugernavn, string kodeord)
     {
-
-
-
-
-
+        
 
     }
 
