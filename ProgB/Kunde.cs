@@ -52,6 +52,8 @@ namespace Eksamensprjekt_forsøg2
                 cmd.Parameters.AddWithValue("@brugernavn", brugernavn);
                 cmd.Parameters.AddWithValue("@kodeord", kodeord);
 
+                
+
                 // ExecuteReader sender SELECT-forespørgslen til databasen
                 // og returnerer et result set (som DataReader læser)
                 reader = cmd.ExecuteReader();
