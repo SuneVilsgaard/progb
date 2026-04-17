@@ -108,11 +108,7 @@ namespace Eksamensprjekt_forsøg2
             {
                 conn.Open();
 
-                string query = "SELECT CustomerID FROM Kunde WHERE Username = @brugernavn AND Password = @kodeord";
-
-
-
-
+                string query = "SELECT * FROM Kunde WHERE Username = @brugernavn AND Password = @kodeord";
 
             }
             catch
