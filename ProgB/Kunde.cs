@@ -37,8 +37,8 @@ namespace Eksamensprjekt_forsøg2
                 conn.Open();
 
                 // SQL-forespørgslen vi sender til databasen
-                string query = "INSERT INTO Kunde (Fornavn, Efternavn, Alder, Brugernavn, Kodeord)" +
-                    "VALUES (@fornavn, @efternavn, @alder, @brugernavn, @kodeord);";
+                string query = "INSERT INTO Kunde (firstname,LastName ,Age, Username, password)" +
+                    "VALUES (@Fornavn, @efternavn, @alder, @brugernavn, @kodeord);";
 
 
                 // Opretter kommando-objektet og kobler det til forbindelsen
@@ -46,7 +46,7 @@ namespace Eksamensprjekt_forsøg2
 
                 // Parameter (@id) beskytter mod SQL injection
                 // og sender værdien sikkert til databasen
-                cmd.Parameters.AddWithValue("@fornavn", fornavn);
+                cmd.Parameters.AddWithValue("@Fornavn", fornavn);
                 cmd.Parameters.AddWithValue("@efternavn", efternavn);
                 cmd.Parameters.AddWithValue("@alder", alder);
                 cmd.Parameters.AddWithValue("@brugernavn", brugernavn);
@@ -87,41 +87,42 @@ namespace Eksamensprjekt_forsøg2
             }
             return null;
         }
-    }
+    
 
     public void Login(string brugernavn, string kodeord)
-    {
-        string connectionString =
-          "server=localhost;database=Sportsbooking;uid=root;pwd=Sune1212;";
-        MySqlConnection conn = new MySqlConnection(connectionString);
-
-        // MySqlCommand repræsenterer en SQL-forespørgsel vi vil sende til databasen
-        MySqlCommand cmd = null;
-
-        // MySqlDataReader svarer til et ResultSet fra databasen
-        // Den bruges til at læse resultatet én række ad gangen
-        MySqlDataReader reader = null;
-
-        try
         {
-            conn.Open();
+            string connectionString =
+              "server=localhost;database=Sportsbooking;uid=root;pwd=Sune1212;";
+            MySqlConnection conn = new MySqlConnection(connectionString);
 
-            string query = "SELECT CustomerID FROM Kunde WHERE Username = @brugernavn AND Password = @kodeord";
+            // MySqlCommand repræsenterer en SQL-forespørgsel vi vil sende til databasen
+            MySqlCommand cmd = null;
+
+            // MySqlDataReader svarer til et ResultSet fra databasen
+            // Den bruges til at læse resultatet én række ad gangen
+            MySqlDataReader reader = null;
+
+            try
+            {
+                conn.Open();
+
+                string query = "SELECT CustomerID FROM Kunde WHERE Username = @brugernavn AND Password = @kodeord";
 
 
 
 
 
-        }
-        catch
-        {
+            }
+            catch
+            {
 
-        }
-        finally
-        {
+            }
+            finally
+            {
+
+            }
 
         }
 
     }
-
 }
