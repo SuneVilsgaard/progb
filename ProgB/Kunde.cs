@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Crypto;
 
 namespace Eksamensprjekt_forsøg2
 {
@@ -16,6 +17,7 @@ namespace Eksamensprjekt_forsøg2
         int Alder;
         string Brugernavn;
         string Kodeord;
+        public int CustomerID;
 
         public Kunde SignUp(string fornavn, string efternavn, int alder, string brugernavn, string kodeord)
         {
@@ -52,7 +54,7 @@ namespace Eksamensprjekt_forsøg2
                 cmd.Parameters.AddWithValue("@brugernavn", brugernavn);
                 cmd.Parameters.AddWithValue("@kodeord", kodeord);
 
-                
+
 
                 // ExecuteReader sender SELECT-forespørgslen til databasen
                 // og returnerer et result set (som DataReader læser)
@@ -89,12 +91,15 @@ namespace Eksamensprjekt_forsøg2
             }
             return null;
         }
-    
 
-    public void Login(string brugernavn, string kodeord)
+
+
+
+
+        public int Login(string brugernavn, string kodeord)
         {
             string connectionString =
-              "server=localhost;database=Sportsbooking;uid=root;pwd=Sune1212;";
+              "server=localhost;database=Sportsbooking;uid=root;pwd=Hest123;";
             MySqlConnection conn = new MySqlConnection(connectionString);
 
             // MySqlCommand repræsenterer en SQL-forespørgsel vi vil sende til databasen
@@ -108,18 +113,42 @@ namespace Eksamensprjekt_forsøg2
             {
                 conn.Open();
 
-                string query = "SELECT * FROM Kunde WHERE Username = @brugernavn AND Password = @kodeord";
+                string query = "SELECT CustomerID FROM Kunde WHERE Username = @brugernavn AND Password = @kodeord;";
+
+                cmd = new MySqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("@brugernavn", brugernavn);
+                cmd.Parameters.AddWithValue("@kodeord", kodeord);
+
+
+                object Result = cmd.ExecuteScalar();
+
+                if (Result == null)
+                {
+                    MessageBox.Show("Login mislykkedes");
+                }
+                else
+                {
+                    CustomerID = Convert.ToInt32(Result);
+                    MessageBox.Show("Login lykkedes, CustomerID er: " + CustomerID);
+                    return CustomerID;
+                }
 
             }
-            catch
+            catch(Exception ex)
             {
-
+                MessageBox.Show(" " + ex);
             }
             finally
             {
+                if (reader != null)
+                    reader.Close();
+
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
 
             }
-
+            return 0;
         }
 
     }

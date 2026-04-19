@@ -43,5 +43,32 @@ namespace ProgB
         {
 
         }
+
+        private void btn_Login_Click(object sender, EventArgs e)
+        {
+
+            
+        }
+
+        private void btn_Login_Click_1(object sender, EventArgs e)
+        {
+            Kunde k = new Kunde();
+
+            string brugernavn = textBox1.Text;
+            string kodeord = textBox2.Text;
+
+            int result = k.Login(brugernavn, kodeord);
+
+            if(result != 0)
+            {
+                Bookingside bs = new Bookingside();
+
+                bs.Show();
+                this.Hide();
+            }
+
+            
+
+        }
     }
 }
