@@ -31,7 +31,7 @@ namespace ProgB
                 conn.Open();
 
                 string query = "INSERT INTO Courts(TypeOffCourt, Date)" +
-                    "VALUES('@typeBane', @dato);";
+                    "VALUES(@typeBane, @dato);";
 
                 cmd = new MySqlCommand(query, conn);
 
