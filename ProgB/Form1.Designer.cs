@@ -78,8 +78,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(76, 38);
             this.button1.TabIndex = 3;
-            this.button1.Text = "SIgn Up";
+            this.button1.Text = "Sign Up";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
@@ -133,7 +134,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Size = new System.Drawing.Size(552, 237);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Login";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
@@ -155,7 +156,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Size = new System.Drawing.Size(552, 237);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "SignUp";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // Label7

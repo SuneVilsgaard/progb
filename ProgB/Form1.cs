@@ -70,5 +70,10 @@ namespace ProgB
             
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectTab(1);
+        }
     }
 }

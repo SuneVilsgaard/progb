@@ -32,7 +32,7 @@ namespace ProgB
         private void btn_vælg_Click(object sender, EventArgs e)
         {
             string TypeSport = comboBox1.Text;
-            DateTime Dato = dtp_booking.Value;
+            DateTime Dato = dtp_booking.Value.Date;
             string Tidspunkt = cmb_Tidspunkt.Text;
 
             Booking bk = new Booking();
