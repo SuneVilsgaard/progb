@@ -33,6 +33,8 @@
             this.btn_vælg = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dtp_booking = new System.Windows.Forms.DateTimePicker();
+            this.mySqlDataAdapter1 = new MySql.Data.MySqlClient.MySqlDataAdapter();
+            this.cmb_Tidspunkt = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -84,11 +86,34 @@
             this.dtp_booking.Size = new System.Drawing.Size(200, 22);
             this.dtp_booking.TabIndex = 5;
             // 
+            // mySqlDataAdapter1
+            // 
+            this.mySqlDataAdapter1.DeleteCommand = null;
+            this.mySqlDataAdapter1.InsertCommand = null;
+            this.mySqlDataAdapter1.SelectCommand = null;
+            this.mySqlDataAdapter1.UpdateCommand = null;
+            // 
+            // cmb_Tidspunkt
+            // 
+            this.cmb_Tidspunkt.FormattingEnabled = true;
+            this.cmb_Tidspunkt.Items.AddRange(new object[] {
+            "12:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00"});
+            this.cmb_Tidspunkt.Location = new System.Drawing.Point(571, 156);
+            this.cmb_Tidspunkt.Name = "cmb_Tidspunkt";
+            this.cmb_Tidspunkt.Size = new System.Drawing.Size(134, 24);
+            this.cmb_Tidspunkt.TabIndex = 6;
+            // 
             // Bookingside
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmb_Tidspunkt);
             this.Controls.Add(this.dtp_booking);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_vælg);
@@ -108,5 +133,7 @@
         private System.Windows.Forms.Button btn_vælg;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtp_booking;
+        private MySql.Data.MySqlClient.MySqlDataAdapter mySqlDataAdapter1;
+        private System.Windows.Forms.ComboBox cmb_Tidspunkt;
     }
 }

@@ -34,7 +34,7 @@ namespace ProgB
             string g = TxtKodeord.Text;
             string b = TxtBrugernavn.Text;
 
-            k.SignUp(f, h, l, g, b);
+            k.SignUp(f, h, l, b, g);
 
 
         }

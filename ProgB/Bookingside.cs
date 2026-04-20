@@ -31,14 +31,13 @@ namespace ProgB
 
         private void btn_vælg_Click(object sender, EventArgs e)
         {
-            string TypeSport = comboBox1.SelectedText;
-            DateTime Tidspunkt = dtp_booking.Value;
+            string TypeSport = comboBox1.Text;
+            DateTime Dato = dtp_booking.Value;
+            string Tidspunkt = cmb_Tidspunkt.Text;
 
             Booking bk = new Booking();
 
-            bk.OpretBooking(TypeSport, Tidspunkt);
-
-            MessageBox.Show("Du har nu booket en " + TypeSport + "bane d. " + Tidspunkt);
+            bk.OpretBooking(TypeSport, Dato, Tidspunkt);
         }
     }
 }

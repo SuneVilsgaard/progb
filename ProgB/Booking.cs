@@ -13,10 +13,10 @@ namespace ProgB
     public class Booking
     {
         string type;
-        string dato;
+        DateTime dato;
+        string tidspunkt;
 
-
-        public Booking OpretBooking(string Type, DateTime Dato)
+        public Booking OpretBooking(string Type, DateTime Dato, string Tidspunkt)
         {
             string connectionString =
                       "server=localhost;database=Sportsbooking;uid=root;pwd=Hest123;";
@@ -30,25 +30,27 @@ namespace ProgB
             {
                 conn.Open();
 
-                string query = "INSERT INTO Courts(TypeOffCourt, Date)" +
-                    "VALUES(@typeBane, @dato);";
+                string query = "INSERT INTO Courts(TypeOffCourt, Date, Time)" +
+                    "VALUES(@type, @dato, @tidspunkt);";
 
                 cmd = new MySqlCommand(query, conn);
 
-                cmd.Parameters.AddWithValue("@typeBane", Type);
+                cmd.Parameters.AddWithValue("@type", Type);
                 cmd.Parameters.AddWithValue("@dato", Dato);
+                cmd.Parameters.AddWithValue("@tidspunkt", Tidspunkt);
 
 
-                reader = cmd.ExecuteReader();
+                int rowsAffected = cmd.ExecuteNonQuery();
 
-                if (reader.Read())
+                if (rowsAffected > 0) 
                 {
                     Booking b = new Booking();
 
-                    b.type = Convert.ToString(reader["Type"]);
-                    b.dato = Convert.ToString(reader["Dato"]);
+                    b.type = Type;
+                    b.dato = Dato;
+                    b.tidspunkt = Tidspunkt;
                     
-                    MessageBox.Show("Du har booket en " + b.type +"bane d. " + b.dato);
+                    MessageBox.Show("Du har booket en " + b.type + "bane d. " + b.dato + " til tidspunktet: " + b.tidspunkt);
                     
                     return b;
 

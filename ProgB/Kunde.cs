@@ -74,6 +74,8 @@ namespace Eksamensprjekt_forsøg2
                     k.Brugernavn = Convert.ToString(reader["Brugernavn"]);
                     k.Kodeord = Convert.ToString(reader["Kodeord"]);
 
+                    MessageBox.Show("Du har nu lavet en konto, og reader er ikke null");
+
                     // Vi returnerer vores C# objekt
                     return k;
                 }
