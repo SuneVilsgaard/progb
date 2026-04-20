@@ -1,6 +1,6 @@
 ﻿namespace ProgB
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -48,6 +48,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_loginSomAdmin = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -76,7 +77,7 @@
             this.button1.Location = new System.Drawing.Point(22, 126);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(76, 38);
+            this.button1.Size = new System.Drawing.Size(131, 38);
             this.button1.TabIndex = 3;
             this.button1.Text = "Sign Up";
             this.button1.UseVisualStyleBackColor = true;
@@ -103,7 +104,7 @@
             this.btn_Login.Location = new System.Drawing.Point(22, 168);
             this.btn_Login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Login.Name = "btn_Login";
-            this.btn_Login.Size = new System.Drawing.Size(76, 38);
+            this.btn_Login.Size = new System.Drawing.Size(131, 38);
             this.btn_Login.TabIndex = 6;
             this.btn_Login.Text = "Log in";
             this.btn_Login.UseVisualStyleBackColor = true;
@@ -117,11 +118,12 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(560, 266);
+            this.tabControl1.Size = new System.Drawing.Size(560, 306);
             this.tabControl1.TabIndex = 7;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btn_loginSomAdmin);
             this.tabPage1.Controls.Add(this.btn_Login);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.textBox2);
@@ -132,7 +134,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(552, 237);
+            this.tabPage1.Size = new System.Drawing.Size(552, 277);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Login";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -258,6 +260,17 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Fornavn";
             // 
+            // btn_loginSomAdmin
+            // 
+            this.btn_loginSomAdmin.Location = new System.Drawing.Point(22, 210);
+            this.btn_loginSomAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_loginSomAdmin.Name = "btn_loginSomAdmin";
+            this.btn_loginSomAdmin.Size = new System.Drawing.Size(131, 39);
+            this.btn_loginSomAdmin.TabIndex = 7;
+            this.btn_loginSomAdmin.Text = "Log in som admin";
+            this.btn_loginSomAdmin.UseVisualStyleBackColor = true;
+            this.btn_loginSomAdmin.Click += new System.EventHandler(this.btn_loginSomAdmin_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -298,6 +311,7 @@
         private System.Windows.Forms.TextBox TxtFornavn;
         private System.Windows.Forms.Label Label7;
         private System.Windows.Forms.TextBox TxtBrugernavn;
+        private System.Windows.Forms.Button btn_loginSomAdmin;
     }
 }
 

@@ -6,17 +6,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.Mozilla;
 using Org.BouncyCastle.Crypto;
 
 namespace Eksamensprjekt_forsøg2
 {
     public class Kunde
     {
-        string Fornavn;
-        string Efternavn;
-        int Alder;
-        string Brugernavn;
-        string Kodeord;
+        public string Fornavn;
+        public string Efternavn;
+        public int Alder;
+        public string Brugernavn;
+        public string Kodeord;
         public int CustomerID;
 
         public Kunde SignUp(string fornavn, string efternavn, int alder, string brugernavn, string kodeord)
@@ -39,8 +40,8 @@ namespace Eksamensprjekt_forsøg2
                 conn.Open();
 
                 // SQL-forespørgslen vi sender til databasen
-                string query = "INSERT INTO Kunde (firstname,LastName ,Age, Username, password)" +
-                    "VALUES (@Fornavn, @efternavn, @alder, @brugernavn, @kodeord);";
+                string query = "INSERT INTO Kunde (firstname,LastName ,Age, Username, password, IsAdmin)" +
+                    "VALUES (@Fornavn, @efternavn, @alder, @brugernavn, @kodeord, 0);";
 
 
                 // Opretter kommando-objektet og kobler det til forbindelsen
@@ -48,38 +49,45 @@ namespace Eksamensprjekt_forsøg2
 
                 // Parameter (@id) beskytter mod SQL injection
                 // og sender værdien sikkert til databasen
-                cmd.Parameters.AddWithValue("@Fornavn", fornavn);
-                cmd.Parameters.AddWithValue("@efternavn", efternavn);
-                cmd.Parameters.AddWithValue("@alder", alder);
-                cmd.Parameters.AddWithValue("@brugernavn", brugernavn);
-                cmd.Parameters.AddWithValue("@kodeord", kodeord);
 
-
-
-                // ExecuteReader sender SELECT-forespørgslen til databasen
-                // og returnerer et result set (som DataReader læser)
-                reader = cmd.ExecuteReader();
-
-
-                if (reader.Read())
+                if (fornavn == null || efternavn == null || alder == 0 || brugernavn == null || kodeord == null)
                 {
-                    // Her mapper vi database-rækken over i et C# objekt
-                    Kunde k = new Kunde();
-
-                    // reader["Kolonnenavn"] henter værdien fra result set
-                    // Convert bruges fordi databasen returnerer et object
-                    k.Fornavn = Convert.ToString(reader["Fornavn"]);
-                    k.Efternavn = Convert.ToString(reader["Efternavn"]);
-                    k.Alder = Convert.ToInt32(reader["Alder"]);
-                    k.Brugernavn = Convert.ToString(reader["Brugernavn"]);
-                    k.Kodeord = Convert.ToString(reader["Kodeord"]);
-
-                    MessageBox.Show("Du har nu lavet en konto, og reader er ikke null");
-
-                    // Vi returnerer vores C# objekt
-                    return k;
+                    MessageBox.Show("Alle felter skal være udfyldt");
                 }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@Fornavn", fornavn);
+                    cmd.Parameters.AddWithValue("@efternavn", efternavn);
+                    cmd.Parameters.AddWithValue("@alder", alder);
+                    cmd.Parameters.AddWithValue("@brugernavn", brugernavn);
+                    cmd.Parameters.AddWithValue("@kodeord", kodeord);
 
+
+
+                    // ExecuteReader sender SELECT-forespørgslen til databasen
+                    // og returnerer et result set (som DataReader læser)
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+
+                    if (rowsAffected > 0)
+                    {
+                        // Her mapper vi database-rækken over i et C# objekt
+                        Kunde k = new Kunde();
+
+                        // reader["Kolonnenavn"] henter værdien fra result set
+                        // Convert bruges fordi databasen returnerer et object
+                        k.Fornavn = fornavn;
+                        k.Efternavn = efternavn;
+                        k.Alder = alder;
+                        k.Brugernavn = brugernavn;
+                        k.Kodeord = kodeord;
+
+                        MessageBox.Show("Du har nu lavet en konto, og reader er ikke null");
+
+                        // Vi returnerer vores C# objekt
+                        return k;
+                    }
+                }
             }
             finally
             {
@@ -132,7 +140,7 @@ namespace Eksamensprjekt_forsøg2
                 else
                 {
                     CustomerID = Convert.ToInt32(Result);
-                    MessageBox.Show("Login lykkedes, CustomerID er: " + CustomerID);
+                    MessageBox.Show("Login lykkedes");
                     return CustomerID;
                 }
 
@@ -152,6 +160,48 @@ namespace Eksamensprjekt_forsøg2
             }
             return 0;
         }
+
+        public void SletKunde(int CustomerID)
+        {
+            string connectionString =
+          "server=localhost;database=Sportsbooking;uid=root;pwd=Hest123;";
+            MySqlConnection conn = new MySqlConnection(connectionString);
+
+            MySqlCommand cmd = null;
+
+            MySqlDataReader reader = null;
+            try
+            {
+                conn.Open();
+
+                string query = "DELETE FROM Kunde WHERE CustomerID = @customerID;";
+
+                cmd = new MySqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("customerID", CustomerID);
+
+                cmd.ExecuteNonQuery();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("" + ex);
+            }
+            finally
+            {
+                if (reader != null)
+                    reader.Close();
+
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+
+            }
+            
+
+
+        }
+
+
 
     }
 }

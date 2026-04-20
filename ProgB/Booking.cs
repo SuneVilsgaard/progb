@@ -36,7 +36,8 @@ namespace ProgB
                 string query = "INSERT INTO Courts(TypeOffCourt, Date, Time)" +
                     "VALUES(@type, @dato, @tidspunkt);";
 
-                string query2 = "SELECT CourtID FROM Courts WHERE Date=@dato AND Time=@tidspunkt;";
+                // Tjekker om der er en bane med samme 
+                string query2 = "SELECT CourtID FROM Courts WHERE TypeOffCourt = @type AND Date=@dato AND Time=@tidspunkt;";
 
 
 
@@ -50,15 +51,21 @@ namespace ProgB
                 
                 cmd2.Parameters.AddWithValue("@tidspunkt", Tidspunkt);
                 cmd2.Parameters.AddWithValue("@dato", Dato);
+                cmd2.Parameters.AddWithValue("@type", Type);
 
+
+                
                 reader = cmd2.ExecuteReader();
 
+                // Tjekker om query2 kommer med et CourtID
                 if (reader.Read())
                 {
                     MessageBox.Show("Tidspunktet er taget..");
                 }
                 else
                 {
+                    reader.Close();
+                    
                     int rowsAffected = cmd.ExecuteNonQuery();
 
                     if (rowsAffected > 0)
@@ -79,16 +86,16 @@ namespace ProgB
             }
             finally
             {
-                // Lukker reader (lukker result set)
                 if (reader != null)
                     reader.Close();
 
-                // Lukker forbindelsen til databasen
                 if (conn.State == System.Data.ConnectionState.Open)
                     conn.Close();
             }
             return null;
         }
+
+
 
 
         public void CheckBooking()

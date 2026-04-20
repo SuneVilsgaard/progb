@@ -35,6 +35,7 @@
             this.dtp_booking = new System.Windows.Forms.DateTimePicker();
             this.mySqlDataAdapter1 = new MySql.Data.MySqlClient.MySqlDataAdapter();
             this.cmb_Tidspunkt = new System.Windows.Forms.ComboBox();
+            this.btn_Tilbage = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -61,7 +62,7 @@
             // 
             // btn_vælg
             // 
-            this.btn_vælg.Location = new System.Drawing.Point(292, 287);
+            this.btn_vælg.Location = new System.Drawing.Point(324, 283);
             this.btn_vælg.Name = "btn_vælg";
             this.btn_vælg.Size = new System.Drawing.Size(119, 38);
             this.btn_vælg.TabIndex = 2;
@@ -108,11 +109,22 @@
             this.cmb_Tidspunkt.Size = new System.Drawing.Size(134, 24);
             this.cmb_Tidspunkt.TabIndex = 6;
             // 
+            // btn_Tilbage
+            // 
+            this.btn_Tilbage.Location = new System.Drawing.Point(30, 30);
+            this.btn_Tilbage.Name = "btn_Tilbage";
+            this.btn_Tilbage.Size = new System.Drawing.Size(119, 38);
+            this.btn_Tilbage.TabIndex = 7;
+            this.btn_Tilbage.Text = "Tilbage";
+            this.btn_Tilbage.UseVisualStyleBackColor = true;
+            this.btn_Tilbage.Click += new System.EventHandler(this.btn_Tilbage_Click);
+            // 
             // Bookingside
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_Tilbage);
             this.Controls.Add(this.cmb_Tidspunkt);
             this.Controls.Add(this.dtp_booking);
             this.Controls.Add(this.label2);
@@ -135,5 +147,6 @@
         private System.Windows.Forms.DateTimePicker dtp_booking;
         private MySql.Data.MySqlClient.MySqlDataAdapter mySqlDataAdapter1;
         private System.Windows.Forms.ComboBox cmb_Tidspunkt;
+        private System.Windows.Forms.Button btn_Tilbage;
     }
 }

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace ProgB
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
@@ -61,9 +61,9 @@ namespace ProgB
 
             if(result != 0)
             {
-                Bookingside bs = new Bookingside();
+                HovedmenuKunde hm = new HovedmenuKunde();
 
-                bs.Show();
+                hm.Show();
                 this.Hide();
             }
 
@@ -74,6 +74,24 @@ namespace ProgB
         private void button1_Click(object sender, EventArgs e)
         {
             tabControl1.SelectTab(1);
+        }
+
+        private void btn_loginSomAdmin_Click(object sender, EventArgs e)
+        {
+            Admin a = new Admin();
+
+            string brugernavn = textBox1.Text;
+            string kodeord = textBox2.Text;
+
+            int result = a.LoginAdmin(brugernavn, kodeord);
+
+            if (result != 0)
+            {
+                HovedmenuAdmin hma = new HovedmenuAdmin();
+
+                hma.Show();
+                this.Hide();
+            }
         }
     }
 }

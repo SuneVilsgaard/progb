@@ -38,6 +38,17 @@ namespace ProgB
             Booking bk = new Booking();
 
             bk.OpretBooking(TypeSport, Dato, Tidspunkt);
+
+            
+
+        }
+
+        private void btn_Tilbage_Click(object sender, EventArgs e)
+        {
+            HovedmenuKunde hmk = new HovedmenuKunde();
+
+            hmk.Show();
+            this.Hide();
         }
     }
 }
