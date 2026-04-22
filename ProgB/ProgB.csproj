@@ -103,6 +103,7 @@
     <Compile Include="Bookingside.Designer.cs">
       <DependentUpon>Bookingside.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +130,12 @@
     </Compile>
     <Compile Include="SeBanerAdmin.Designer.cs">
       <DependentUpon>SeBanerAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeBookinger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeBookinger.Designer.cs">
+      <DependentUpon>SeBookinger.cs</DependentUpon>
     </Compile>
     <Compile Include="SeKunderAdmin.cs">
       <SubType>Form</SubType>
@@ -159,6 +166,9 @@
     </Compile>
     <EmbeddedResource Include="SeBanerAdmin.resx">
       <DependentUpon>SeBanerAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeBookinger.resx">
+      <DependentUpon>SeBookinger.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SeKunderAdmin.resx">
       <DependentUpon>SeKunderAdmin.cs</DependentUpon>
