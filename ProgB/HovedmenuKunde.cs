@@ -24,5 +24,13 @@ namespace ProgB
             bs.Show();
             this.Hide();
         }
+
+        private void btn_SeBookinger_Click(object sender, EventArgs e)
+        {
+            SeBookinger sb = new SeBookinger();
+
+            sb.Show();
+            this.Hide();
+        }
     }
 }

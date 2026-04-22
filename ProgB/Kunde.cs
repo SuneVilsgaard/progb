@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Asn1.Mozilla;
 using Org.BouncyCastle.Crypto;
+using ProgB;
 
 namespace Eksamensprjekt_forsøg2
 {
@@ -18,7 +19,11 @@ namespace Eksamensprjekt_forsøg2
         public int Alder;
         public string Brugernavn;
         public string Kodeord;
-        public int CustomerID;
+
+        public static int CustomerID;
+
+
+
 
         public Kunde SignUp(string fornavn, string efternavn, int alder, string brugernavn, string kodeord)
         {
@@ -64,8 +69,6 @@ namespace Eksamensprjekt_forsøg2
 
 
 
-                    // ExecuteReader sender SELECT-forespørgslen til databasen
-                    // og returnerer et result set (som DataReader læser)
                     int rowsAffected = cmd.ExecuteNonQuery();
 
 
@@ -139,9 +142,10 @@ namespace Eksamensprjekt_forsøg2
                 }
                 else
                 {
-                    CustomerID = Convert.ToInt32(Result);
-                    MessageBox.Show("Login lykkedes");
-                    return CustomerID;
+                    Customer.CustomerID = Convert.ToInt32(Result);
+                    MessageBox.Show("Login lykkedes" + Customer.CustomerID);
+                    
+                    return Customer.CustomerID;
                 }
 
             }

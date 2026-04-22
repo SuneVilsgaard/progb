@@ -50,15 +50,16 @@
             this.btn_SeBookinger.TabIndex = 1;
             this.btn_SeBookinger.Text = "Se bookinger";
             this.btn_SeBookinger.UseVisualStyleBackColor = true;
+            this.btn_SeBookinger.Click += new System.EventHandler(this.btn_SeBookinger_Click);
             // 
-            // Hovedmenu
+            // HovedmenuKunde
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btn_SeBookinger);
             this.Controls.Add(this.btn_bookBane);
-            this.Name = "Hovedmenu";
+            this.Name = "HovedmenuKunde";
             this.Text = "Hovedmenu";
             this.ResumeLayout(false);
 

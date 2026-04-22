@@ -33,10 +33,10 @@ namespace ProgB
             {
                 conn.Open();
 
-                string query = "INSERT INTO Courts(TypeOffCourt, Date, Time)" +
-                    "VALUES(@type, @dato, @tidspunkt);";
+                string query = "INSERT INTO Courts(TypeOffCourt, Date, Time, CustomerID)" +
+                    "VALUES(@type, @dato, @tidspunkt, @customerID);";
 
-                // Tjekker om der er en bane med samme 
+                // Tjekker om der er en bane med samme værdier
                 string query2 = "SELECT CourtID FROM Courts WHERE TypeOffCourt = @type AND Date=@dato AND Time=@tidspunkt;";
 
 
@@ -48,6 +48,7 @@ namespace ProgB
                 cmd.Parameters.AddWithValue("@type", Type);
                 cmd.Parameters.AddWithValue("@dato", Dato);
                 cmd.Parameters.AddWithValue("@tidspunkt", Tidspunkt);
+                cmd.Parameters.AddWithValue("@customerID", Customer.CustomerID);
                 
                 cmd2.Parameters.AddWithValue("@tidspunkt", Tidspunkt);
                 cmd2.Parameters.AddWithValue("@dato", Dato);
