@@ -46,7 +46,7 @@ namespace Eksamensprjekt_forsøg2
 
                 // SQL-forespørgslen vi sender til databasen
                 string query = "INSERT INTO Kunde (firstname,LastName ,Age, Username, password, IsAdmin)" +
-                    "VALUES (@Fornavn, @efternavn, @alder, @brugernavn, @kodeord, 0);";
+                    "VALUES (@Fornavn, @efternavn, @alder, @brugernavn, Sha2('@kodeord',224), 0);";
 
 
                 // Opretter kommando-objektet og kobler det til forbindelsen
@@ -126,7 +126,7 @@ namespace Eksamensprjekt_forsøg2
             {
                 conn.Open();
 
-                string query = "SELECT CustomerID FROM Kunde WHERE Username = @brugernavn AND Password = @kodeord;";
+                string query = "SELECT CustomerID FROM Kunde WHERE Username = @brugernavn AND Password = SHA2('@kodeord', 224) AND IsAdmin= 0;";
 
                 cmd = new MySqlCommand(query, conn);
 

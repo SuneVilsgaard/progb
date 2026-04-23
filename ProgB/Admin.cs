@@ -29,8 +29,8 @@ namespace ProgB
             {
                 conn.Open();
 
-                string query = "SELECT CustomerID FROM Kunde WHERE Username = @brugernavn AND Password = @kodeord AND IsAdmin = true;";
-
+                string query = "SELECT CustomerID FROM Kunde WHERE Username = @brugernavn AND Password = SHA2('@kodeord', 224) AND IsAdmin = true;";
+                
                 cmd = new MySqlCommand(query, conn);
 
                 cmd.Parameters.AddWithValue("@brugernavn", brugernavn);
