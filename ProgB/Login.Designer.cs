@@ -48,7 +48,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btn_loginSomAdmin = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -123,7 +122,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.btn_loginSomAdmin);
             this.tabPage1.Controls.Add(this.btn_Login);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.textBox2);
@@ -156,7 +154,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(552, 237);
+            this.tabPage2.Size = new System.Drawing.Size(552, 277);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "SignUp";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -260,25 +258,14 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Fornavn";
             // 
-            // btn_loginSomAdmin
-            // 
-            this.btn_loginSomAdmin.Location = new System.Drawing.Point(22, 210);
-            this.btn_loginSomAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_loginSomAdmin.Name = "btn_loginSomAdmin";
-            this.btn_loginSomAdmin.Size = new System.Drawing.Size(131, 39);
-            this.btn_loginSomAdmin.TabIndex = 7;
-            this.btn_loginSomAdmin.Text = "Log in som admin";
-            this.btn_loginSomAdmin.UseVisualStyleBackColor = true;
-            this.btn_loginSomAdmin.Click += new System.EventHandler(this.btn_loginSomAdmin_Click);
-            // 
-            // Form1
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(711, 360);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Form1";
+            this.Name = "Login";
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -311,7 +298,6 @@
         private System.Windows.Forms.TextBox TxtFornavn;
         private System.Windows.Forms.Label Label7;
         private System.Windows.Forms.TextBox TxtBrugernavn;
-        private System.Windows.Forms.Button btn_loginSomAdmin;
     }
 }
 

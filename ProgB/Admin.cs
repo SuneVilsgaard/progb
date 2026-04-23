@@ -48,6 +48,7 @@ namespace ProgB
                 {
                     CustomerID = Convert.ToInt32(Result);
                     MessageBox.Show("TILLYKE: Login lykkedes, du er nu officielt administrator");
+                    Customer.IsAdmin = true;
                     return CustomerID;
                 }
 

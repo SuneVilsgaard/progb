@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -144,6 +145,7 @@ namespace Eksamensprjekt_forsøg2
                 {
                     Customer.CustomerID = Convert.ToInt32(Result);
                     MessageBox.Show("Login lykkedes" + Customer.CustomerID);
+                    Customer.IsAdmin = false;
                     
                     return Customer.CustomerID;
                 }

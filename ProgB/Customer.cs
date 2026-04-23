@@ -12,5 +12,11 @@ namespace ProgB
         {
             get; set;
         }
+        public static bool IsAdmin
+        {
+            get; set;
+        }
+
+
     }
 }

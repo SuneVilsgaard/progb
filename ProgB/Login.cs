@@ -55,21 +55,38 @@ namespace ProgB
         {
             Kunde k = new Kunde();
 
+            Admin a = new Admin();
+
             string brugernavn = textBox1.Text;
             string kodeord = textBox2.Text;
 
-            int result = k.Login(brugernavn, kodeord);
+            int resultKunde = k.Login(brugernavn, kodeord);
 
-
-            if(result != 0)
+            if (Customer.IsAdmin == false)
             {
-                HovedmenuKunde hm = new HovedmenuKunde();
+                if (resultKunde != 0)
+                {
+                    HovedmenuKunde hm = new HovedmenuKunde();
 
-                hm.Show();
-                this.Hide();
+                    hm.Show();
+                    this.Hide();
+                }
             }
 
-            
+            int resultAdmin = a.LoginAdmin(brugernavn, kodeord);
+
+            if (Customer.IsAdmin == true)
+            {
+                if(resultAdmin != 0)
+                {
+                    HovedmenuAdmin hma = new HovedmenuAdmin();
+
+                    hma.Show();
+                    this.Hide();
+                }
+            }
+
+
 
         }
 
@@ -80,20 +97,7 @@ namespace ProgB
 
         private void btn_loginSomAdmin_Click(object sender, EventArgs e)
         {
-            Admin a = new Admin();
 
-            string brugernavn = textBox1.Text;
-            string kodeord = textBox2.Text;
-
-            int result = a.LoginAdmin(brugernavn, kodeord);
-
-            if (result != 0)
-            {
-                HovedmenuAdmin hma = new HovedmenuAdmin();
-
-                hma.Show();
-                this.Hide();
-            }
         }
     }
 }
