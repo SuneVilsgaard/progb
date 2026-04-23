@@ -96,6 +96,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.cs" />
+    <Compile Include="Betalling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Betalling.Designer.cs">
+      <DependentUpon>Betalling.cs</DependentUpon>
+    </Compile>
     <Compile Include="Booking.cs" />
     <Compile Include="Bookingside.cs">
       <SubType>Form</SubType>
@@ -143,6 +149,9 @@
     <Compile Include="SeKunderAdmin.Designer.cs">
       <DependentUpon>SeKunderAdmin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Betalling.resx">
+      <DependentUpon>Betalling.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bookingside.resx">
       <DependentUpon>Bookingside.cs</DependentUpon>
     </EmbeddedResource>

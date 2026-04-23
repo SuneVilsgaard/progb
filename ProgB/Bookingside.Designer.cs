@@ -45,26 +45,28 @@
             "Fodbold",
             "Håndbold",
             "Floorbold"});
-            this.comboBox1.Location = new System.Drawing.Point(105, 153);
+            this.comboBox1.Location = new System.Drawing.Point(118, 191);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(136, 28);
             this.comboBox1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(102, 131);
+            this.label1.Location = new System.Drawing.Point(115, 164);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 16);
+            this.label1.Size = new System.Drawing.Size(221, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Hvilken type bane vil du booke";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btn_vælg
             // 
-            this.btn_vælg.Location = new System.Drawing.Point(324, 283);
+            this.btn_vælg.Location = new System.Drawing.Point(364, 354);
+            this.btn_vælg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_vælg.Name = "btn_vælg";
-            this.btn_vælg.Size = new System.Drawing.Size(119, 38);
+            this.btn_vælg.Size = new System.Drawing.Size(134, 48);
             this.btn_vælg.TabIndex = 2;
             this.btn_vælg.Text = "Book";
             this.btn_vælg.UseVisualStyleBackColor = true;
@@ -73,18 +75,19 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(322, 131);
+            this.label2.Location = new System.Drawing.Point(362, 164);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 16);
+            this.label2.Size = new System.Drawing.Size(152, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Hvornår vil du booke";
             // 
             // dtp_booking
             // 
             this.dtp_booking.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_booking.Location = new System.Drawing.Point(324, 156);
+            this.dtp_booking.Location = new System.Drawing.Point(364, 195);
+            this.dtp_booking.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtp_booking.Name = "dtp_booking";
-            this.dtp_booking.Size = new System.Drawing.Size(200, 22);
+            this.dtp_booking.Size = new System.Drawing.Size(224, 26);
             this.dtp_booking.TabIndex = 5;
             // 
             // mySqlDataAdapter1
@@ -104,16 +107,18 @@
             "15:00",
             "16:00",
             "17:00"});
-            this.cmb_Tidspunkt.Location = new System.Drawing.Point(571, 156);
+            this.cmb_Tidspunkt.Location = new System.Drawing.Point(642, 195);
+            this.cmb_Tidspunkt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmb_Tidspunkt.Name = "cmb_Tidspunkt";
-            this.cmb_Tidspunkt.Size = new System.Drawing.Size(134, 24);
+            this.cmb_Tidspunkt.Size = new System.Drawing.Size(150, 28);
             this.cmb_Tidspunkt.TabIndex = 6;
             // 
             // btn_Tilbage
             // 
-            this.btn_Tilbage.Location = new System.Drawing.Point(30, 30);
+            this.btn_Tilbage.Location = new System.Drawing.Point(28, 37);
+            this.btn_Tilbage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Tilbage.Name = "btn_Tilbage";
-            this.btn_Tilbage.Size = new System.Drawing.Size(119, 38);
+            this.btn_Tilbage.Size = new System.Drawing.Size(134, 48);
             this.btn_Tilbage.TabIndex = 7;
             this.btn_Tilbage.Text = "Tilbage";
             this.btn_Tilbage.UseVisualStyleBackColor = true;
@@ -121,9 +126,9 @@
             // 
             // Bookingside
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.btn_Tilbage);
             this.Controls.Add(this.cmb_Tidspunkt);
             this.Controls.Add(this.dtp_booking);
@@ -131,6 +136,7 @@
             this.Controls.Add(this.btn_vælg);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Bookingside";
             this.Text = "Bookingside";
             this.ResumeLayout(false);

@@ -1,5 +1,6 @@
 ﻿using Eksamensprjekt_forsøg2;
 using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 using Org.BouncyCastle.Asn1.Mozilla;
 using Org.BouncyCastle.Crmf;
 using System;
@@ -39,7 +40,7 @@ namespace ProgB
                 // Tjekker om der er en bane med samme værdier
                 string query2 = "SELECT CourtID FROM Courts WHERE TypeOffCourt = @type AND Date=@dato AND Time=@tidspunkt;";
 
-
+               
 
                 cmd = new MySqlCommand(query, conn);
                 cmd2 = new MySqlCommand(query2, conn);
