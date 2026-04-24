@@ -19,6 +19,7 @@ namespace ProgB
         public Login()
         {
             InitializeComponent();
+
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -61,14 +62,9 @@ namespace ProgB
             string brugernavn = textBox1.Text;
             string kodeord = textBox2.Text;
 
-
-
             int resultKunde = k.Login(brugernavn, kodeord);
 
-            string brugernavn1 = textBox1.Text;
-            string kodeord1 = textBox2.Text;
-
-            int resultAdmin = a.LoginAdmin(brugernavn1, kodeord1);
+            int resultAdmin = a.LoginAdmin(brugernavn, kodeord);
 
             if (resultKunde != 0)
             {
@@ -110,7 +106,7 @@ namespace ProgB
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            textBox2.UseSystemPasswordChar = true;
         }
     }
 }
