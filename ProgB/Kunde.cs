@@ -169,19 +169,24 @@ namespace Eksamensprjekt_forsøg2
             MySqlConnection conn = new MySqlConnection(connectionString);
 
             MySqlCommand cmd = null;
+            MySqlCommand cmd2 = null;
+
 
             MySqlDataReader reader = null;
             try
             {
                 conn.Open();
 
-                string query = "DELETE FROM Kunde WHERE CustomerID = @customerID;";
+                string query = "DELETE FROM Courts WHERE CustomerID = @customerID;";
+                string query2 = "DELETE FROM Kunde WHERE CustomerID = @customerID;";
 
                 cmd = new MySqlCommand(query, conn);
+                cmd2 = new MySqlCommand(query2, conn);
 
                 cmd.Parameters.AddWithValue("customerID", CustomerID);
+                cmd2.Parameters.AddWithValue("customerID", CustomerID);
 
-                cmd.ExecuteNonQuery();
+                cmd2.ExecuteNonQuery();
 
             }
             catch(Exception ex)
