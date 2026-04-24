@@ -1,10 +1,12 @@
 ﻿using Eksamensprjekt_forsøg2;
+using MySqlX.XDevAPI.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -54,41 +56,42 @@ namespace ProgB
         private void btn_Login_Click_1(object sender, EventArgs e)
         {
             Kunde k = new Kunde();
-
             Admin a = new Admin();
 
             string brugernavn = textBox1.Text;
             string kodeord = textBox2.Text;
 
+
+
             int resultKunde = k.Login(brugernavn, kodeord);
 
-            if (Customer.IsAdmin == false)
+            string brugernavn1 = textBox1.Text;
+            string kodeord1 = textBox2.Text;
+
+            int resultAdmin = a.LoginAdmin(brugernavn1, kodeord1);
+
+            if (resultKunde != 0)
             {
-                if (resultKunde != 0)
-                {
-                    HovedmenuKunde hm = new HovedmenuKunde();
+                MessageBox.Show("Login lykkedes");
+                HovedmenuKunde hm = new HovedmenuKunde();
 
-                    hm.Show();
-                    this.Hide();
-                }
+                hm.Show();
+                this.Hide();
             }
-
-            int resultAdmin = a.LoginAdmin(brugernavn, kodeord);
-
-            if (Customer.IsAdmin == true)
+            else if (resultAdmin != 0)
             {
-                if(resultAdmin != 0)
-                {
-                    HovedmenuAdmin hma = new HovedmenuAdmin();
+                MessageBox.Show("Tillyke: Login admin lykkedes");
+                HovedmenuAdmin hma = new HovedmenuAdmin();
 
-                    hma.Show();
-                    this.Hide();
-                }
+                hma.Show();
+                this.Hide();
             }
-
-
-
+            else
+            {
+                MessageBox.Show("Login mislykkedes");
+            }
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -96,6 +99,16 @@ namespace ProgB
         }
 
         private void btn_loginSomAdmin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
         {
 
         }

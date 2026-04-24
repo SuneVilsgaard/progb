@@ -134,21 +134,16 @@ namespace Eksamensprjekt_forsøg2
                 cmd.Parameters.AddWithValue("@brugernavn", brugernavn);
                 cmd.Parameters.AddWithValue("@kodeord", kodeord);
 
-
                 object Result = cmd.ExecuteScalar();
-
-                if (Result == null)
-                {
-                    MessageBox.Show("Login mislykkedes");
-                }
-                else
+                if (Result != null)
                 {
                     Customer.CustomerID = Convert.ToInt32(Result);
-                    MessageBox.Show("Login lykkedes" + Customer.CustomerID);
-                    Customer.IsAdmin = false;
-                    
-                    return Customer.CustomerID;
                 }
+                // MessageBox.Show("Login lykkedes" + Customer.CustomerID);
+                Customer.IsAdmin = false;
+                    
+                return Customer.CustomerID;             
+                
 
             }
             catch(Exception ex)

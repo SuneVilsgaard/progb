@@ -29,28 +29,24 @@ namespace ProgB
             {
                 conn.Open();
 
-                string query = "SELECT CustomerID FROM Kunde WHERE Username = @brugernavn AND Password = SHA2(@kodeord, 224) ;";
+                string query = "SELECT CustomerID FROM Kunde WHERE Username = @brugernavn AND Password = SHA2(@kodeord, 224) AND IsAdmin = 1;";
                 
                 cmd = new MySqlCommand(query, conn);
 
                 cmd.Parameters.AddWithValue("@brugernavn", brugernavn);
                 cmd.Parameters.AddWithValue("@kodeord", kodeord);
 
-
-
                 object Result = cmd.ExecuteScalar();
 
-                if (Result == null)
+                if (Result != null)
                 {
-                    MessageBox.Show("Login mislykkedes");
-                }
-                else
-                {
-                    CustomerID = Convert.ToInt32(Result);
-                    MessageBox.Show("TILLYKE: Login lykkedes, du er nu officielt administrator");
+                    Customer.CustomerID = Convert.ToInt32(Result);
                     Customer.IsAdmin = true;
-                    return CustomerID;
+                    return Customer.CustomerID;
                 }
+                
+                // MessageBox.Show("TILLYKE: Login lykkedes, du er nu officielt administrator");
+                    
 
             }
             catch (Exception ex)

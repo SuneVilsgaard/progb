@@ -136,6 +136,7 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Login";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // tabPage2
             // 
@@ -267,6 +268,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Login";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
