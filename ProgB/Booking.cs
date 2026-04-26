@@ -98,13 +98,6 @@ namespace ProgB
         }
 
 
-
-
-        public void CheckBooking()
-        {
-
-        }
-
         public void SletBooking()
         {
             string connectionString =

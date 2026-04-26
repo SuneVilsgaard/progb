@@ -40,23 +40,23 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(100, 174);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(89, 139);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(644, 192);
+            this.dataGridView1.Size = new System.Drawing.Size(572, 154);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label1.Location = new System.Drawing.Point(116, 131);
+            this.label1.Location = new System.Drawing.Point(103, 105);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 22);
+            this.label1.Size = new System.Drawing.Size(108, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Dine bookinger";
             // 
@@ -64,10 +64,9 @@
             // 
             this.btn_Tilbage1.BackColor = System.Drawing.Color.White;
             this.btn_Tilbage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btn_Tilbage1.Location = new System.Drawing.Point(100, 55);
-            this.btn_Tilbage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Tilbage1.Location = new System.Drawing.Point(89, 44);
             this.btn_Tilbage1.Name = "btn_Tilbage1";
-            this.btn_Tilbage1.Size = new System.Drawing.Size(147, 54);
+            this.btn_Tilbage1.Size = new System.Drawing.Size(131, 43);
             this.btn_Tilbage1.TabIndex = 2;
             this.btn_Tilbage1.Text = "Tilbage";
             this.btn_Tilbage1.UseVisualStyleBackColor = false;
@@ -75,15 +74,14 @@
             // 
             // SeBookinger
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProgB.Properties.Resources.football;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(900, 562);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btn_Tilbage1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "SeBookinger";
             this.Text = "SeBookinger";
             this.Load += new System.EventHandler(this.SeBookinger_Load);
