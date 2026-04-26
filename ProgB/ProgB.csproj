@@ -206,5 +206,20 @@
   <ItemGroup>
     <None Include="Resources\børn spiller sport.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hal 3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hal 4.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kunder billede.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kunder 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bane icon.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

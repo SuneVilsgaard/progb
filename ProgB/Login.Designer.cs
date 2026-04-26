@@ -103,9 +103,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(242, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 25);
+            this.label1.Size = new System.Drawing.Size(113, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "brugernavn";
+            this.label1.Text = "Brugernavn";
             // 
             // textBox2
             // 
@@ -123,9 +123,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(257, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 25);
+            this.label2.Size = new System.Drawing.Size(98, 25);
             this.label2.TabIndex = 1;
-            this.label2.Text = "password";
+            this.label2.Text = "Password";
             // 
             // textBox1
             // 
@@ -197,10 +197,10 @@
             // 
             this.button3.BackColor = System.Drawing.Color.White;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(395, 208);
+            this.button3.Location = new System.Drawing.Point(407, 184);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(132, 32);
+            this.button3.Size = new System.Drawing.Size(100, 41);
             this.button3.TabIndex = 9;
             this.button3.Text = "Sign up";
             this.button3.UseVisualStyleBackColor = false;

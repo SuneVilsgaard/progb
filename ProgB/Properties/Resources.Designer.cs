@@ -63,6 +63,16 @@ namespace ProgB.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bane_icon {
+            get {
+                object obj = ResourceManager.GetObject("bane icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap billede_til_app {
             get {
                 object obj = ResourceManager.GetObject("billede til app", resourceCulture);
@@ -96,6 +106,26 @@ namespace ProgB.Properties {
         internal static System.Drawing.Bitmap hal_4 {
             get {
                 object obj = ResourceManager.GetObject("hal 4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kunder_2 {
+            get {
+                object obj = ResourceManager.GetObject("kunder 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kunder_billede {
+            get {
+                object obj = ResourceManager.GetObject("kunder billede", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
