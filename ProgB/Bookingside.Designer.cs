@@ -63,7 +63,7 @@
             // 
             // btn_vælg
             // 
-            this.btn_vælg.Location = new System.Drawing.Point(364, 354);
+            this.btn_vælg.Location = new System.Drawing.Point(366, 247);
             this.btn_vælg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_vælg.Name = "btn_vælg";
             this.btn_vælg.Size = new System.Drawing.Size(134, 48);
@@ -115,10 +115,11 @@
             // 
             // btn_Tilbage
             // 
-            this.btn_Tilbage.Location = new System.Drawing.Point(28, 37);
+            this.btn_Tilbage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Tilbage.Location = new System.Drawing.Point(118, 32);
             this.btn_Tilbage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Tilbage.Name = "btn_Tilbage";
-            this.btn_Tilbage.Size = new System.Drawing.Size(134, 48);
+            this.btn_Tilbage.Size = new System.Drawing.Size(153, 84);
             this.btn_Tilbage.TabIndex = 7;
             this.btn_Tilbage.Text = "Tilbage";
             this.btn_Tilbage.UseVisualStyleBackColor = true;
@@ -128,6 +129,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::ProgB.Properties.Resources.børn_spiller_sport;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.btn_Tilbage);
             this.Controls.Add(this.cmb_Tidspunkt);

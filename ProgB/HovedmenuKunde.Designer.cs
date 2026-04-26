@@ -34,9 +34,11 @@
             // 
             // btn_bookBane
             // 
-            this.btn_bookBane.Location = new System.Drawing.Point(203, 138);
+            this.btn_bookBane.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btn_bookBane.Location = new System.Drawing.Point(195, 313);
+            this.btn_bookBane.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_bookBane.Name = "btn_bookBane";
-            this.btn_bookBane.Size = new System.Drawing.Size(100, 48);
+            this.btn_bookBane.Size = new System.Drawing.Size(228, 117);
             this.btn_bookBane.TabIndex = 0;
             this.btn_bookBane.Text = "Book bane";
             this.btn_bookBane.UseVisualStyleBackColor = true;
@@ -44,21 +46,28 @@
             // 
             // btn_SeBookinger
             // 
-            this.btn_SeBookinger.Location = new System.Drawing.Point(361, 138);
+            this.btn_SeBookinger.BackColor = System.Drawing.Color.Transparent;
+            this.btn_SeBookinger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_SeBookinger.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SeBookinger.Location = new System.Drawing.Point(446, 313);
+            this.btn_SeBookinger.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_SeBookinger.Name = "btn_SeBookinger";
-            this.btn_SeBookinger.Size = new System.Drawing.Size(100, 48);
+            this.btn_SeBookinger.Size = new System.Drawing.Size(219, 117);
             this.btn_SeBookinger.TabIndex = 1;
             this.btn_SeBookinger.Text = "Se bookinger";
-            this.btn_SeBookinger.UseVisualStyleBackColor = true;
+            this.btn_SeBookinger.UseVisualStyleBackColor = false;
             this.btn_SeBookinger.Click += new System.EventHandler(this.btn_SeBookinger_Click);
             // 
             // HovedmenuKunde
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::ProgB.Properties.Resources.hal_4;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.btn_SeBookinger);
             this.Controls.Add(this.btn_bookBane);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "HovedmenuKunde";
             this.Text = "Hovedmenu";
             this.ResumeLayout(false);
