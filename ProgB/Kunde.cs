@@ -127,7 +127,9 @@ namespace Eksamensprjekt_forsøg2
             {
                 conn.Open();
 
-                string query = "SELECT CustomerID FROM Kunde WHERE Username = @brugernavn AND Password = SHA2(@kodeord, 224) AND IsAdmin= 0;";
+                string query = "SELECT CustomerID FROM Kunde WHERE Username = @brugernavn " +
+                    "AND Password = SHA2(@kodeord, 224) AND IsAdmin= 0;";
+
 
                 cmd = new MySqlCommand(query, conn);
 
@@ -138,13 +140,11 @@ namespace Eksamensprjekt_forsøg2
                 if (Result != null)
                 {
                     Customer.CustomerID = Convert.ToInt32(Result);
-                }
-                // MessageBox.Show("Login lykkedes" + Customer.CustomerID);
-                Customer.IsAdmin = false;
-                    
-                return Customer.CustomerID;             
-                
+                    Customer.IsAdmin = false;
 
+                }
+
+                return Customer.CustomerID;
             }
             catch(Exception ex)
             {

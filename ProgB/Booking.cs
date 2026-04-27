@@ -33,18 +33,14 @@ namespace ProgB
             try
             {
                 conn.Open();
-
                 string query = "INSERT INTO Courts(TypeOffCourt, Date, Time, CustomerID)" +
                     "VALUES(@type, @dato, @tidspunkt, @customerID);";
 
                 // Tjekker om der er en bane med samme værdier
                 string query2 = "SELECT CourtID FROM Courts WHERE TypeOffCourt = @type AND Date=@dato AND Time=@tidspunkt;";
 
-               
-
                 cmd = new MySqlCommand(query, conn);
                 cmd2 = new MySqlCommand(query2, conn);
-
 
                 cmd.Parameters.AddWithValue("@type", Type);
                 cmd.Parameters.AddWithValue("@dato", Dato);
@@ -54,9 +50,7 @@ namespace ProgB
                 cmd2.Parameters.AddWithValue("@tidspunkt", Tidspunkt);
                 cmd2.Parameters.AddWithValue("@dato", Dato);
                 cmd2.Parameters.AddWithValue("@type", Type);
-
-
-                
+            
                 reader = cmd2.ExecuteReader();
 
                 // Tjekker om query2 kommer med et CourtID
@@ -78,7 +72,8 @@ namespace ProgB
                         b.dato = Dato;
                         b.tidspunkt = Tidspunkt;
 
-                        MessageBox.Show("Du har booket en " + b.type + "bane d. " + Dato.Day + "-" + Dato.Month + "-" + Dato.Year + " kl. " + b.tidspunkt);
+                        MessageBox.Show("Du har booket en " + b.type + "bane d. " + Dato.Day +
+                            "-" + Dato.Month + "-" + Dato.Year + " kl. " + b.tidspunkt);
 
                         return b;
 
@@ -90,42 +85,12 @@ namespace ProgB
             {
                 if (reader != null)
                     reader.Close();
-
+    
                 if (conn.State == System.Data.ConnectionState.Open)
                     conn.Close();
             }
             return null;
         }
-
-
-        public void SletBooking()
-        {
-            string connectionString =
-          "server=localhost;database=Sportsbooking;uid=root;pwd=Hest123;";
-            MySqlConnection conn = new MySqlConnection(connectionString);
-
-            MySqlCommand cmd = null;
-
-            MySqlDataReader reader = null;
-
-            try
-            {
-                conn.Open();
-
-                string query = "DELETE FROM Courts WHERE CourtID";
-            }
-            finally
-            {
-                if (reader != null)
-                    reader.Close();
-
-                if (conn.State == System.Data.ConnectionState.Open)
-                    conn.Close();
-            }
-        }
-
-
-
 
 
     }

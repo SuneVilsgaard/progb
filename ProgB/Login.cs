@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -63,7 +64,6 @@ namespace ProgB
             string kodeord = textBox2.Text;
 
             int resultKunde = k.Login(brugernavn, kodeord);
-
             int resultAdmin = a.LoginAdmin(brugernavn, kodeord);
 
             if (resultKunde != 0)
@@ -83,9 +83,7 @@ namespace ProgB
                 this.Hide();
             }
             else
-            {
                 MessageBox.Show("Login mislykkedes");
-            }
         }
 
 
