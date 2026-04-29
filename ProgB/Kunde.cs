@@ -183,10 +183,15 @@ namespace Eksamensprjekt_forsøg2
                 cmd = new MySqlCommand(query, conn);
                 cmd2 = new MySqlCommand(query2, conn);
 
-                cmd.Parameters.AddWithValue("customerID", CustomerID);
-                cmd2.Parameters.AddWithValue("customerID", CustomerID);
+                cmd.Parameters.AddWithValue("@customerID", CustomerID);
+                cmd2.Parameters.AddWithValue("@customerID", CustomerID);
 
+                cmd.ExecuteNonQuery();
                 cmd2.ExecuteNonQuery();
+
+
+
+
 
             }
             catch(Exception ex)

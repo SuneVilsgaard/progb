@@ -55,7 +55,7 @@ namespace ProgB
         {
             int customerID = Convert.ToInt32(txb_CustomerID.Text);
 
-            if (Customer.IsAdmin == true)
+            if (customerID == Customer.CustomerID)
             {
                 MessageBox.Show("Du kan ikke slette admin brugeren");
             }
