@@ -37,9 +37,12 @@ namespace ProgB
 
             Booking bk = new Booking();
 
-            bk.OpretBooking(TypeSport, Dato, Tidspunkt);
-
-            
+            if (TypeSport != null && Dato != null && Tidspunkt != null)
+            {
+                bk.OpretBooking(TypeSport, Dato, Tidspunkt);
+            }
+            else
+                MessageBox.Show("Du skal indtaste alle felter for at booke en bane");            
 
         }
 
