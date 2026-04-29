@@ -200,10 +200,8 @@ namespace Eksamensprjekt_forsøg2
                     MessageBox.Show("KundeID'et findes ikke i databasen");
                 }
 
-
-
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("" + ex);
             }
