@@ -65,8 +65,6 @@ namespace ProgB
 
                 k.SletKunde(customerID);
 
-                MessageBox.Show("Du har lige slettet en kunde med KundeID'et: " + customerID);
-
                 LoadData();
             }
         }

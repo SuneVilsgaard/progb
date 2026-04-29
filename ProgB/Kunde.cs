@@ -187,14 +187,21 @@ namespace Eksamensprjekt_forsøg2
                 cmd2.Parameters.AddWithValue("@customerID", CustomerID);
 
                 cmd.ExecuteNonQuery();
-                cmd2.ExecuteNonQuery();
 
+                int rowsAffected = cmd2.ExecuteNonQuery();
 
-
-
+                if (rowsAffected != 0)
+                {
+                    cmd2.ExecuteNonQuery();
+                    MessageBox.Show("Du har lige slettet Kunden med kundeID'et: " + CustomerID);
+                }
+                else if (rowsAffected == 0)
+                {
+                    MessageBox.Show("KundeID'et findes ikke i databasen");
+                }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("" + ex);
             }
