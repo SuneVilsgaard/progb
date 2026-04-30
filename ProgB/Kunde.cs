@@ -47,7 +47,7 @@ namespace Eksamensprjekt_forsøg2
 
                 // SQL-forespørgslen vi sender til databasen
                 string query = "INSERT INTO Kunde (firstname,LastName ,Age, Username, password, IsAdmin)" +
-                    "VALUES (@Fornavn, @efternavn, @alder, @brugernavn, Sha2('@kodeord',224), 0);";
+                    "VALUES (@Fornavn, @efternavn, @alder, @brugernavn, Sha2(@kodeord,224), 0);";
 
 
                 // Opretter kommando-objektet og kobler det til forbindelsen
